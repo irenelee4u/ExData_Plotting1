@@ -8,10 +8,12 @@ names(data) <- c("Date", "Time", "Global_active_power", "Voltage", "Global_Inten
 ## read data between specific dates
 subdata <- subset(data, data$Date == "1/2/2007" | data$Date=="2/2/2007")
 
+##create a PNG file
 png("Plot1.png",width=480, height=480)
 
-##
+##graph elements
 hist(subdata[,Global_active_power],main="Global Active Power" ,col="red", main ="Global Active Power", xlab = "Global Active Power (Kilowatts)", ylab="Frequency")
+## turn off the device
 dev.off()
 
 
