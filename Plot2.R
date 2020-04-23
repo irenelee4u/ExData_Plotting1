@@ -16,11 +16,14 @@ subdata[1441:2880, "Time"] <- format(subdata[1441:2880, "Time"], "2007-02-02 %H:
 
 ##strptime(paste(subdata$Date, subdata$Time, sep=" "), "%d/%m/%y %H:%M:%S")
 globalActivePower <- as.numeric(as.character(subdata$Global_active_power))
+## create a png file
 png("Plot2.png",width=480, height=480)
 
-##
+##plotting a graph
 plot(subdata$Time, globalActivePower, type ="l", xlab="", ylab="Global Active Power (kilowatts)" )
+##adding a main title
 title(main= "Global Active Power Vs Time")
+##off the device
 dev.off()
 
 
